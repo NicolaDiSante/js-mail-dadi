@@ -8,13 +8,19 @@ var user_number = prompt("Inserisci un numero da 1 a 6");
 if(user_number <1 || user_number>6){
   alert('ERROR!')
 }
-console.log(user_number)
+//console.log(user_number)
 
 var comp_number = Math.floor(Math.random() *6) + 1;
-console.log(comp_number)
+//console.log(comp_number)
+
+var msg;
 
 if(user_number > comp_number){
-  console.log("Utente Vincitore")
+  msg="Complimenti hai vinto!"
+}else if(user_number == comp_number){
+  msg="Pareggio, ritenta!"
 }else{
-  console.log("Computer Vincitore1")
+  msg="Torna a casa, hai perso!"
 }
+
+document.getElementById('msgInfo').innerHTML = msg;
